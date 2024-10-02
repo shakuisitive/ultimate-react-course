@@ -14,6 +14,7 @@ import Login from "./pages/Login";
 import PageNav from "./components/PageNav";
 import CityList from "./components/CityList";
 import { useEffect } from "react";
+import CountryList from "./components/CountryList";
 
 // STARTING OUR APPLICATION!
 
@@ -56,7 +57,10 @@ function App() {
             path="cities"
             element={<CityList isLoading={isLoading} cities={cities} />}
           />
-          <Route path="countries" element={<p>Countries</p>} />
+          <Route
+            path="countries"
+            element={<CountryList isLoading={isLoading} cities={cities} />}
+          />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
