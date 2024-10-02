@@ -22,7 +22,11 @@ function App() {
         <Route path="product" element={<Product />} />
         <Route path="pricing" element={<Pricing />} />
         <Route path="login" element={<Login />} />
-        <Route path="app" element={<AppLayout />} />
+        <Route path="app" element={<AppLayout />}>
+          <Route index element={<p>LIST</p>} />
+          <Route path="cities" element={<p>List of cities</p>} />
+          <Route path="countries" element={<p>Countries</p>} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
