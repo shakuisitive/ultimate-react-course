@@ -8,6 +8,7 @@ import Pricing from "./pages/Pricing";
 import Homepage from "./pages/Homepage";
 import NotFound from "./pages/NotFound";
 import AppLayout from "./pages/AppLayout";
+import Login from "./pages/Login";
 
 // importing components
 import PageNav from "./components/PageNav";
@@ -16,12 +17,11 @@ import PageNav from "./components/PageNav";
 function App() {
   return (
     <BrowserRouter>
-      <h1>welcome to the site</h1>
-      <PageNav />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="product" element={<Product />} />
         <Route path="pricing" element={<Pricing />} />
+        <Route path="login" element={<Login />} />
         <Route path="app" element={<AppLayout />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
