@@ -1,5 +1,5 @@
 // imports from libraries
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // importing pages
@@ -13,8 +13,8 @@ import Login from "./pages/Login";
 // importing components
 import PageNav from "./components/PageNav";
 import CityList from "./components/CityList";
-import { useEffect } from "react";
 import CountryList from "./components/CountryList";
+import City from "./components/City";
 
 // STARTING OUR APPLICATION!
 
@@ -57,6 +57,7 @@ function App() {
             path="cities"
             element={<CityList isLoading={isLoading} cities={cities} />}
           />
+          <Route path="cities/:id" element={<City />} />
           <Route
             path="countries"
             element={<CountryList isLoading={isLoading} cities={cities} />}
