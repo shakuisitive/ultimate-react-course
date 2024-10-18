@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 // import { useCities } from "../contexts/CitiesContext";
 import BackButton from "./BackButton";
 import styles from "./City.module.css";
@@ -15,6 +15,10 @@ const formatDate = (date) =>
 
 function City() {
   const { id } = useParams();
+  let [searchParams, setSearchParams] = useSearchParams();
+
+  let lat = searchParams.get("lat");
+  let lng = searchParams.get("lng");
   // const { getCity, currentCity, isLoading } = useCities();
 
   // useEffect(
@@ -28,7 +32,14 @@ function City() {
 
   // if (isLoading) return <Spinner />;
 
-  return <h1>City {id}</h1>;
+  return (
+    <div>
+      <h1>City {id}</h1>
+      <h2>
+        Positions: {lat}, {lng}
+      </h2>
+    </div>
+  );
 
   // return (
   //   <div className={styles.city}>
