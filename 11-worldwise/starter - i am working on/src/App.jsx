@@ -1,6 +1,6 @@
 // imports from libraries
 import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // importing pages
 import Product from "./pages/Product";
@@ -52,7 +52,9 @@ function App() {
         <Route path="app" element={<AppLayout />}>
           <Route
             index
-            element={<CityList isLoading={isLoading} cities={cities} />}
+            element={<Navigate replace to="cities" />}
+
+            // element={<CityList isLoading={isLoading} cities={cities} />}
           />
           <Route
             path="cities"
