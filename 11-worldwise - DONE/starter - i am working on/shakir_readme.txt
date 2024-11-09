@@ -4,7 +4,7 @@ do "npm run server" along with running the server to start json server for this 
 
 ---
 git add .
-git commit -m "Complete Chapter 18: lecture 9"
+git commit -m "Complete Chapter 18: lecture 10"
 git clear 
 git log --oneline
 ---
